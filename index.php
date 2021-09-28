@@ -123,16 +123,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h2 class="text-white mb-4">My Files</h2>
-                    <input id="searchBar" type="text" placeholder="Search files"/>
-                    <button id="search-button">Search</button>
+                    <h2 class="text-white mb-4">Файли</h2>
+                    <input id="searchBar" type="text" placeholder="Шукати файли"/>
+                    <button id="search-button">Пошук</button>
                     <div style="" class="files-layout">
                         <table id="files-table" class="table table-bordered" style="text-align: left;">
                             <thead>
-                                <th scope="col">File Name</th>
-                                <th scope="col">User</th>
-                                <th scope="col">Uploaded On</th>
-                                <th scope="col">Actions</th>
+                                <th scope="col">Назва файла</th>
+                                <th scope="col">Користувач</th>
+                                <th scope="col">Дата завантаження</th>
+                                <th scope="col">Дії</th>
                             </thead>
                             <tbody id="files-body">
                             <?php foreach($fm->getAllFiles() as $file ): ?>

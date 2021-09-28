@@ -21,24 +21,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $random_name = $fm->randomName() . "." . pathinfo($filename, PATHINFO_EXTENSION);;
         // Verify file extension
         $ext = pathinfo($filename, PATHINFO_EXTENSION);
-        if(!array_key_exists($ext, $allowed)) die("Error: Please select a valid file format.");
+        if(!array_key_exists($ext, $allowed)) die("Помилка: Оберіть один з дозволених форматів файла.");
 
         // Verify file size - 5MB maximum
         $maxsize = intval( $fm->getMaxUploadFileSize() ) * 1024 * 1024;
-        if($filesize > $maxsize) die("Error: File size is larger than the allowed limit.");
+        if($filesize > $maxsize) die("Помилка: Файл надто завеликий.");
 
         // Verify MYME type of the file
         if(in_array($filetype, $allowed)){
             // Check whether file exists before uploading it
             if(file_exists("{$uploadDir}/" . $random_name)){
-                echo $filename . " is already exists.";
+                echo $filename . " вже існує.";
             } else{
                 move_uploaded_file($_FILES["file"]["tmp_name"], "{$uploadDir}/" . $random_name);
                 $fm->createFile($filename, "{$uploadDir}/". $random_name, $fm->getDatedUrl($random_name));
-                echo "Your file was uploaded successfully.";
+                echo "Файл завантажено успішно.";
             }
         } else{
-            echo "Error: There was a problem uploading your file. Please try again.";
+            echo "Помилка: Проблема при завантаженні файла. Спробуйте ще раз пізніше.";
         }
     } else{
         echo "Error: " . $_FILES["file"]["error"];

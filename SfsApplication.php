@@ -165,7 +165,7 @@ class SfsApplication
     public function authenticate()
     {
         if(!$this->isLoggedIn()){
-            die('You dont have permissions to use this file');
+            die('Недостатньо прав для цього файлу');
         }
     }
 

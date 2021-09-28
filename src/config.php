@@ -1,13 +1,13 @@
 <?php
 return [
-    "appName" => "Simple File Server",
+    "appName" => "Звалище",
     "baseDir" => dirname( dirname(__FILE__) ),
-    "baseUrl" => "http://myserver.dev",
+    "baseUrl" => "https://battletech.com.ua",
     "background" => "",
-    "installed" => "false",
-    "orderBy" => "date",
+    "installed" => "true",
+    "orderBy" => "name",
     'files' => [
-        "maxUploadSize" => "10", // in mb
+        "maxUploadSize" => "150", // in mb
         "allowed" =>  [
             "jpg" => "image/jpg",
             "jpeg" => "image/jpeg",
